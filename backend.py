@@ -13,11 +13,6 @@ app.mount("/front-end", StaticFiles(directory="front-end"), name="front-end")
 def somar(a: int, b: int):
     return {"resultado": a * b}
 
-@app.get("/api/somar")
-def somar(a: int, b: int):
-    return {"resultado": a * b}
-
-
 # abrir o site
 @app.get("/")
 def home():
