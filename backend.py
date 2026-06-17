@@ -1,20 +1,21 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# servir arquivos estáticos
-app.mount("/front-end", StaticFiles(directory="front-end"), name="front-end")
-app.mount("/Imgs", StaticFiles(directory="Imgs"), name="Imgs")
+# permite o JS acessar a API (CORS)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # depois você pode restringir
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
+@app.get("/status")
+def status():
+    return {"message": "API funcionando"}
 
-# rota que o JS vai chamar
-@app.get("/api/somar")
-def somar(a: int, b: int):
-    return {"resultado": a * b}
-
-# abrir o site
-@app.get("/")
-def home():
-    return FileResponse("front-end/index.html")
+@app.post("/soma")
+def soma(data: dict):
+    return {"resultado": data["a"] + data["b"]}
