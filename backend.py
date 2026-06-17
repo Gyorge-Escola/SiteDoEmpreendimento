@@ -6,6 +6,7 @@ app = FastAPI()
 
 # servir arquivos estáticos
 app.mount("/front-end", StaticFiles(directory="front-end"), name="front-end")
+app.mount("/Imgs", StaticFiles(directory="Imgs"), name="Imgs")
 
 
 # rota que o JS vai chamar
