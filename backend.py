@@ -1,21 +1,10 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from flask import Flask, render_template
 
-app = FastAPI()
+app = Flask(__name__)
 
-# permite o JS acessar a API (CORS)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # depois você pode restringir
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+@app.route("/")
+def home():
+    return render_template("index.html")
 
-@app.get("/status")
-def status():
-    return {"message": "API funcionando"}
-
-@app.post("/soma")
-def soma(data: dict):
-    return {"resultado": data["a"] + data["b"]}
+if __name__ == "__main__":
+    app.run(debug=True)
