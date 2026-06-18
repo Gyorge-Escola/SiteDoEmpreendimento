@@ -1,0 +1,25 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+
+}
+#header1{
+    display: flex;
+}
+#logoImg{
+    width: 45px;
+    height: 45px;
+}
+#logoText{
+
+}
+.aHead{
+
+}
+#buttonHead{
+
+}
