@@ -15,4 +15,6 @@ return fetch(`/api/${api}`, {
 });
 }
 
-python("multiplicar",5,9)
+python("multiplicar", 5, 9).then(resultado => {
+  console.log(resultado);
+});
