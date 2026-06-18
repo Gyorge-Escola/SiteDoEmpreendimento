@@ -18,8 +18,9 @@ header{
 
 }
 .aHead{
-
+    text-decoration: none;
 }
 #buttonHead{
-
+    width: 9vh;
+    height: 3vh;
 }
