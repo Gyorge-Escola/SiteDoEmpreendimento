@@ -1,4 +1,4 @@
-fetch("https://symmetrical-space-capybara-q7x95grrvx9vf457v-8000.app.github.dev/:8000/soma", {
+fetch("https://127.0.0.1:8000/soma", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
