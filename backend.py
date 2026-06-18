@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
 
@@ -6,12 +6,10 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-def soma(a, b):
-    return a + b
-
-@app.route("/api/soma")
-def rota_soma():
-    resultado = soma(2, 3)
+@app.route("/api/multiplicar", methods=["POST"])
+def multiplicar():
+    data = request.json
+    resultado = data["a"] * data["b"]
     return jsonify({"resultado": resultado})
 
 if __name__ == "__main__":
