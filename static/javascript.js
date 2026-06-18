@@ -1,5 +1,5 @@
 function python(api,a,b) {
-fetch(`/api/${api}`, {
+return fetch(`/api/${api}`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -11,9 +11,8 @@ fetch(`/api/${api}`, {
 })
 .then(res => res.json())
 .then(data => {
-  console.log(data.resultado); // 50
-});
   return data.resultado
+});
 }
 
 python("multiplicar",5,9)
