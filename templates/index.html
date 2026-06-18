@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/Imgs/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Imgs/logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>ToqueDeUmGorje</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
     <header">
         <!--header part 1-->
         <div id="header1">
-            <img id="logoImg" src="/Imgs/logo.png" >
+            <img id="logoImg" src="{{ url_for('static', filename='Imgs/logo.png') }}" >
             <h3 id="logoText">Toque De Um Gorje</h3>
             <a class="aHead">Galeria</a>
             <a class="aHead">Contato</a>
