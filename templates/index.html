@@ -8,72 +8,95 @@
     <title>ToqueDeUmGorje</title>
 </head>
 <body>
-    <!--div pro header melhor-->
-    <header">
-        <!--header part 1-->
-        <div id="header1">
-            <img id="logoImg" src="{{ url_for('static', filename='Imgs/logo.png') }}" >
-            <h3 id="logoText">Toque De Um Gorje</h3>
-            <a class="aHead">Galeria</a>
-            <a class="aHead">Contato</a>
-            <button id="buttonHead">Começar</button>
+    <header>
+        <div class="container header-inner">
+            <a class="brand" href="#top">
+                <img id="logoImg" src="{{ url_for('static', filename='Imgs/logo.png') }}" alt="Logo Toque De Um Gorje">
+                <span id="logoText">Toque De Um Gorje</span>
+            </a>
+            <nav class="nav-links">
+                <a class="aHead" href="#galeria">Galeria</a>
+                <a class="aHead" href="#beneficios">Benefícios</a>
+                <a class="aHead" href="#contato">Contato</a>
+            </nav>
+            <a class="button buttonHead" href="#contato">Começar</a>
         </div>
-
     </header>
 
-    <!--título central e subtítulo-->
-    <div>
-        <h1 id="bigTitle">Decorações fabulosas</h1>
-        <p id="subtitle">se você busca por cor e elegância na decoração de sua ca, está no lugar certo!</p>
-
-        <!--botões abaixo do texto-->
-        <div>
-            <button class="buttonMid" onclick="">Entre em contato</button>
-            <button class="buttonMid" onclick="">saiba mais</button>
-        </div>
-    </div>
-
-    <!--galeria-->
-    <div>
-        <h2 class="titleMenor">Galeria</h2>
-        <p id="galeriaSub">exemplo de nossos produtos</p>
-
-        <!--grid das imgs-->
-        <div>
-            <div class="blocoGaleria">
-                <img src="" class="galeriaImg">
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <p class="eyebrow">Decorações únicas para sua casa</p>
+                <h1 id="bigTitle">Decorações fabulosas</h1>
+                <p id="subtitle">Se você busca por cor e elegância na decoração de sua casa, está no lugar certo!</p>
+                <div class="hero-actions">
+                    <a class="button buttonPrimary" href="#contato">Entre em contato</a>
+                    <a class="button buttonSecondary" href="#galeria">Saiba mais</a>
+                </div>
             </div>
-            <div class="blocoGaleria">
-                <img src="" class="galeriaImg">
-            </div>
-            <div class="blocoGaleria">
-                <img src
-        <h1 id="bigTitle">Decor="" class="galeriaImg">
-            </div>
-            <div class="blocoGaleria">
-                <img src="" class="galeriaImg">
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!--grand finale-->
-    <div>
+        <section id="galeria" class="section gallery-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="titleMenor">Galeria</h2>
+                    <p id="galeriaSub">Exemplo de nossos produtos</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="blocoGaleria">
+                        <img src="{{ url_for('static', filename='Imgs/logo.png') }}" alt="Produto 1" class="galeriaImg">
+                    </div>
+                    <div class="blocoGaleria">
+                        <img src="{{ url_for('static', filename='Imgs/logo.png') }}" alt="Produto 2" class="galeriaImg">
+                    </div>
+                    <div class="blocoGaleria">
+                        <img src="{{ url_for('static', filename='Imgs/logo.png') }}" alt="Produto 3" class="galeriaImg">
+                    </div>
+                    <div class="blocoGaleria">
+                        <img src="{{ url_for('static', filename='Imgs/logo.png') }}" alt="Produto 4" class="galeriaImg">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h2 class="titleMenor">Benefícios</h2>
-        <!--motivos-->
-        <div class="pointsDiv">
-            <h3 class="pointsText">Estética</h3>
-            <p class="pointsMore">Beleza e elegância nos produtos.</p>
+        <section id="beneficios" class="section benefits-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="titleMenor">Benefícios</h2>
+                </div>
+                <div class="benefits-grid">
+                    <article class="pointsDiv">
+                        <h3 class="pointsText">Estética</h3>
+                        <p class="pointsMore">Beleza e elegância nos produtos.</p>
+                    </article>
+                    <article class="pointsDiv">
+                        <h3 class="pointsText">Acessível</h3>
+                        <p class="pointsMore">Disponível agora online e em lojas físicas.</p>
+                    </article>
+                    <article class="pointsDiv">
+                        <h3 class="pointsText">Entrega ágil</h3>
+                        <p class="pointsMore">Entrega rápida com qualidade.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section contact-section">
+            <div class="container contact-card">
+                <div>
+                    <h2>Vamos criar sua decoração</h2>
+                    <p>Entre em contato para receber um orçamento personalizado e transformar seu ambiente.</p>
+                </div>
+                <a class="button buttonPrimary" href="mailto:contato@example.com">Enviar mensagem</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>Toque De Um Gorje · Decoração com estilo e cuidado</p>
         </div>
-        <div class="pointsDiv">
-            <h3 class="pointsText">Acessível</h3>
-            <p class="pointsMore">Disponível agora online é em lojas físicas.</p>
-        </div>
-        <div class="pointsDiv">
-            <h3 class="pointsText">Entrega ágil</h3>
-            <p class="pointsMore">Entrega rápida com qualidade.</p>
-        </div>
-    </div>
+    </footer>
 
     <script src="{{ url_for('static', filename='javascript.js') }}"></script>
 </body>
