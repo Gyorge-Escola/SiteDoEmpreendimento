@@ -19,8 +19,10 @@ header{
 }
 .aHead{
     text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px;
 }
 #buttonHead{
-    width: 9vh;
-    height: 3vh;
+    width: 10vh;
+    height: 4vh;
 }
